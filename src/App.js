@@ -1,14 +1,10 @@
 import './App.css';
-
+import ChartComponent from './components/ChartComponent';
+import {generateDummyRecords} from './helpers/helper'
 function App() {
+  console.log(generateDummyRecords());
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Hello World
-        </p>
-      </header>
-    </div>
+    <ChartComponent />
   );
 }
 
