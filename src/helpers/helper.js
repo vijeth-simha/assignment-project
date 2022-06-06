@@ -48,7 +48,7 @@ export const generateDummyRecords = () => {
   return apiData;
 };
 
-export const getMostFrequent = (arr) => {
+export const getMostVisitedPageTitle = (arr) => {
   const hashmap = arr.reduce((acc, val) => {
     acc[val.pageTitle] = (acc[val.pageTitle] || 0) + 1;
     return acc;
@@ -65,7 +65,7 @@ export const getMostFrequent = (arr) => {
   };
 };
 
-export const getFrequentTimeStamps = (arr) => {
+export const getHighestUsersVisitTimeStamp = (arr) => {
   const hashmap = arr.reduce((acc, val) => {
     acc[val.Timestamp.substr(11, 19)] =
       (acc[val.Timestamp.substr(11, 19)] || 0) + 1;

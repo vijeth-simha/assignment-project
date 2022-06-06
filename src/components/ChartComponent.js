@@ -1,5 +1,5 @@
 import React from "react";
-import { generateDummyRecords, getMostFrequent,getFrequentTimeStamps} from "../helpers/helper";
+import { generateDummyRecords, getMostVisitedPageTitle,getHighestUsersVisitTimeStamp} from "../helpers/helper";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -35,7 +35,7 @@ const ChartComponent = () => {
     el.Timestamp.includes("2021-01-01")
   );
 
-  const {values,labels,label}= getMostFrequent(filteredApiData);
+  const {values,labels,label}= getMostVisitedPageTitle(filteredApiData);
 
   const data = {
     labels,
@@ -49,7 +49,7 @@ const ChartComponent = () => {
     ],
   };
 
-  const {timeStampValues,timeStampChartlabels,timeStampLabels}= getFrequentTimeStamps(filteredApiData);
+  const {timeStampValues,timeStampChartlabels,timeStampLabels}= getHighestUsersVisitTimeStamp(filteredApiData);
 
   const timedata = {
     labels: timeStampChartlabels,

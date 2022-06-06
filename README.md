@@ -31,6 +31,15 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 
 
+### `Part 3 - Small questions asked in the requirement`
 
 
+Q1. Share your thoughts on how this generated data set will be different from real
+world data.
 
+Answer: Generated data set doesnt randomize the values that i have used and also the time stamps would be from actual user visiting the page not the dummy ones.
+
+
+Q2. Share a one-liner on why you chose the specific visualization library .
+
+Answer: I have selected react-chartjs-2 library that uses chart js library under the hood which is very light weight and it is mobile responsive as well. Doesnt take that much amount of time to load as compared to other libraries
