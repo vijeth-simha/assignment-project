@@ -1,4 +1,4 @@
-import { intialArrayValue, numberOfRecords,numberOfUserIds } from "../constants/constants";
+import { intialArrayValue, numberOfRecords,numberOfUserIds,randomTimeStamps } from "../constants/constants";
 
 const randomPageTitle =()=> {
     let pageTitles = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
@@ -24,22 +24,17 @@ const selectRandomUserId = ()=>{
 
 selectRandomUserId();
 
-// function randomDate(start, end) {
-//     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-// }
-
-function randomDate(start, end) {
-    var date = new Date(+start + Math.random() * (end - start));
-    return date;
-  }
-
-// console.log(randomDate(new Date(2021,1,1), new Date()).toISOString());
+const selectRandomTimeStamp = ()=>{
+  let timestamps = randomTimeStamps;
+  let timestamp = timestamps[Math.floor(Math.random() * timestamps.length)];
+  return timestamp
+} 
 
 export const generateDummyRecords = ()=>{
     const apiData = [];
     for(let i=intialArrayValue;i<numberOfRecords;i++) {
         const userData = {
-            "Timestamp":randomDate(new Date(2021,1,1), new Date(2022,1,1)).toISOString(),
+            "Timestamp":selectRandomTimeStamp(),
             "userId":selectRandomUserId(),
             "pageTitle":randomPageTitle()
         }
@@ -47,3 +42,5 @@ export const generateDummyRecords = ()=>{
     }
     return apiData
 }
+
+  
